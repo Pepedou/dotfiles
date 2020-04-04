@@ -14,14 +14,19 @@ compinit
 # End of lines added by compinstall
 
 # Set prompt and generic global variables
-export PATH=/usr/local/pycharm-community-2019.3.3/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
-PROMPT="%n@%m:%~%(!.#.$) "
+PROMPT="%(?..[%?] )%n@%m:%~%(!.#.$) "
 EDITOR=/usr/bin/vim
 
 # LS colors and prompt
-alias ls='ls --color=auto'
+alias ls='ls --color=auto -N' # Use the -N to remove annoying '' around filenames with spaces
 alias ll='ls -l'
 alias la='ls -la'
+
+# Top to htop
+type htop >/dev/null 2>&1 && alias top=htop
+
+# Open alias
+alias open=xdg-open
 
 # Add alias for handling dotfiles
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
