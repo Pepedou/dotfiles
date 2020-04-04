@@ -1,0 +1,9 @@
+#!/bin/sh
+
+DOC=$1
+
+echo Converting $DOC to XWiki
+
+asciidoctor -b docbook5 -r asciidoctor-diagram $DOC -o - | pandoc -f docbook -t xwiki | sed 's/^|= |=$//g' | xclip -sel clip
+
+exit $?
