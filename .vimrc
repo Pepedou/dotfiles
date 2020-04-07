@@ -38,7 +38,3 @@ nnoremap td  :tabclose<CR>
 filetype off
 filetype plugin indent on       " Apply indent settings per file type based on files in ~/.vim/after/ftplugin
 
-call plug#begin('~/.vim/plugged')
-Plug 'habamax/vim-asciidoctor'
-call plug#end()
-
