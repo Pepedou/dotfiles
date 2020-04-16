@@ -44,6 +44,21 @@ bindsym $mod+w kill
 # start dmenu (a program launcher)
 bindsym $mod+space exec dmenu_run -b
 
+# screenshots
+set $mode_screenshot Screenshot: [Print] Fullscreen Gr[a]b [W]indow
+
+mode "$mode_screenshot" {
+	bindsym Print exec "scrot -m \\"$HOME/Pictures/screenshots/%s_%H%M_%d.%m.%Y_$wx$h.png\\""; mode "default"
+	bindsym --release a exec "scrot -s \\"$HOME/Pictures/screenshots/%s_%H%M_%d.%m.%Y_$wx$h.png\\""; mode "default"
+	bindsym --release w exec "scrot -u -d 1 \\"$HOME/Pictures/screenshots/%s_%H%M_%d.%m.%Y_$wx$h.png\\""; mode "default"
+
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym $mod+r mode "default"
+}
+
+bindsym Print mode "$mode_screenshot"
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
