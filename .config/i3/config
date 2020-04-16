@@ -208,14 +208,26 @@ gaps outer 30
 
 for_window [window_role="pop-up"] floating enable
 
-# Smart gaps (gaps used if only more than one container on the workspace)
-# smart_gaps on
+# Pycharm splash screen enable floating
+for_window [class="jetbrains-pycharm" title="win0"] floating enable
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace)
 smart_borders on
 
-# Window assignment
-assign [class="Chromium"] "1: www"
+# Whatsdesk
+for_window [class="whatsdesk"] move scratchpad
+bindsym $mod+y [class="whatsdesk"] scratchpad show
+exec --no-startup-id whatsdesk
+
+# Spotify
+for_window [class="Spotify"] move scratchpad
+bindsym $mod+m [class="Spotify"] scratchpad show
+exec --no-startup-id spotify
+
+# Signal
+for_window [class="Signal"] move scratchpad
+bindsym $mod+u [class="Signal"] scratchpad show
+exec --no-startup-id signal-desktop
 
 # Background wallpaper
 exec_always --no-startup-id feh --no-fehbg --bg-scale ~/images/astronaut_spacesuit_reflection_144426_1920x1080.jpg

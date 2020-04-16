@@ -1,12 +1,13 @@
 #!/bin/bash
 BOSE_700=4C:87:5D:A2:58:F0
 
-INPUT=`echo -e 'Connect\nDisconnect\nA2DP\nHS/HF' | dmenu -i -p "Bose 700 Bluetooth"`
+INPUT=`echo -e 'Connect\nDisconnect\nA2DP\nHS/HF\nRemove' | dmenu -b -i -p "Bose 700 Bluetooth"`
 
 case "$INPUT" in
 	Connect) bluetoothctl <<<"connect $BOSE_700" && notify-send -u low "Bose 700" Connected || notify-send -u critical "Bose 700" "Unable to connect" ;;
 	Disconnect) bluetoothctl <<<"disconnect $BOSE_700" && notify-send -u low "Bose 700" Disconnected || notify-send -u critical "Bose 700" "Unable to disconnect" ;;
 	A2DP) pacmd set-card-profile bluez_card.4C_87_5D_A2_58_F0 a2dp_sink && notify-send A2DP || notify-send -u critical A2DP Failed ;;
 	HS/HF) pacmd set-card-profile bluez_card.4C_87_5D_A2_58_F0 headset_head_unit && notify-send HS/HF || notify-send HS/HF Failed ;;
+	Remove) bluetoothctl <<<"remove $BOSE_700" && notify-send -u low "Bose 700" Removed || notify-send -u critical "Bose 700" "Unable to remove" ;;
 esac
 
