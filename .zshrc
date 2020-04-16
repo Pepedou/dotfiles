@@ -28,6 +28,12 @@ type htop >/dev/null 2>&1 && alias top=htop
 # Open alias
 alias open=xdg-open
 
+# User systemctl shortcut
+alias sys="systemctl"
+alias sysu="systemctl --user"
+alias jrnl="journalctl"
+alias jrnlu="journalctl --user"
+
 # Add alias for handling dotfiles
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
 
