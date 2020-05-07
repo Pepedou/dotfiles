@@ -35,6 +35,6 @@ nnoremap tn  :tabnew<CR>
 nnoremap tm  :tabm<Space>
 nnoremap td  :tabclose<CR>
 
-filetype off
+filetype on
 filetype plugin indent on       " Apply indent settings per file type based on files in ~/.vim/after/ftplugin
 
