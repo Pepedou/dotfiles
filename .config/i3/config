@@ -222,7 +222,6 @@ exec --no-startup-id whatsdesk
 # Spotify
 for_window [class="Spotify"] move scratchpad
 bindsym $mod+m [class="Spotify"] scratchpad show
-exec --no-startup-id spotify
 
 # Signal
 for_window [class="Signal"] move scratchpad
