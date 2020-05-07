@@ -8,9 +8,9 @@ bindkey -v                                          # Enable vim mode
 
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/pepedou/.zshrc'
-autoload -Uz compinit
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
+autoload -Uz compinit && compinit
 autoload -U colors && colors
-compinit
 # End of lines added by compinstall
 
 # Set prompt and generic global variables
