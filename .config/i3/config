@@ -151,7 +151,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -227,6 +227,11 @@ bindsym $mod+m [class="Spotify"] scratchpad show
 for_window [class="Signal"] move scratchpad
 bindsym $mod+u [class="Signal"] scratchpad show
 exec --no-startup-id signal-desktop
+
+# Ranger
+for_window [class="ranger"] move scratchpad
+bindsym $mod+Shift+e [class="ranger"] scratchpad show
+exec --no-startup-id gnome-terminal --geometry=200x50 --class ranger -- zsh -c ranger
 
 # Background wallpaper
 exec_always --no-startup-id feh --no-fehbg --bg-scale ~/images/astronaut_spacesuit_reflection_144426_1920x1080.jpg
