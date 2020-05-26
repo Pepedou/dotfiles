@@ -48,9 +48,9 @@ bindsym $mod+space exec dmenu_run -b
 set $mode_screenshot Screenshot: [Print] Fullscreen Gr[a]b [W]indow
 
 mode "$mode_screenshot" {
-	bindsym Print exec "scrot -m \\"$HOME/Pictures/screenshots/%s_%H%M_%d.%m.%Y_$wx$h.png\\""; mode "default"
-	bindsym --release a exec "scrot -s \\"$HOME/Pictures/screenshots/%s_%H%M_%d.%m.%Y_$wx$h.png\\""; mode "default"
-	bindsym --release w exec "scrot -u -d 1 \\"$HOME/Pictures/screenshots/%s_%H%M_%d.%m.%Y_$wx$h.png\\""; mode "default"
+	bindsym Print exec --no-startup-id "scrot -m \\"$HOME/Pictures/screenshots/%s_%H%M_%d.%m.%Y_$wx$h.png\\""; mode "default"
+	bindsym --release a exec --no-startup-id "scrot -s \\"$HOME/Pictures/screenshots/%s_%H%M_%d.%m.%Y_$wx$h.png\\""; mode "default"
+	bindsym --release w exec --no-startup-id "scrot -u -d 1 \\"$HOME/Pictures/screenshots/%s_%H%M_%d.%m.%Y_$wx$h.png\\""; mode "default"
 
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
