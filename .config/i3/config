@@ -59,6 +59,19 @@ mode "$mode_screenshot" {
 
 bindsym Print mode "$mode_screenshot"
 
+set $mode_power Power ctl: [s]hutdown [r]estart s[u]spend l[o]gout
+mode "$mode_power" {
+	bindsym s exec --no-startup-id systemctl poweroff
+	bindsym u exec --no-startup-id systemctl suspend
+	bindsym r exec --no-startup-id reboot
+	bindsym o exec --no-startup-id i3-msg exit
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+bindsym $mod+Shift+p mode "$mode_power"
+
+bindsym $mod+Shift+w exec --no-startup-id feh --bg-scale --randomize --no-fehbg $HOME/Pictures/Wallpapers
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
