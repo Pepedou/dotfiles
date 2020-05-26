@@ -6,8 +6,14 @@ setopt autocd extendedglob notify
 setopt appendhistory sharehistory incappendhistory  # Enable shared and persistent history
 bindkey -v                                          # Enable vim mode
 
+# z fuzzy cd https://github.com/agkozak/zsh-z
+source $HOME/.zsh-z.plugin.zsh
+
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/pepedou/.zshrc'
+# When pressing tab, highlight entries in the menu
+zstyle ':completion:*' menu select
+# Match against different cases
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 autoload -Uz compinit && compinit
 autoload -U colors && colors
