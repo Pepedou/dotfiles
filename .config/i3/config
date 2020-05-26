@@ -136,16 +136,33 @@ bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
 # move workspaces with num keypad
-bindsym $mod+Mod2+KP_1 workspace number $ws1 
-bindsym $mod+Mod2+KP_2 workspace number $ws2 
-bindsym $mod+Mod2+KP_3 workspace number $ws3 
-bindsym $mod+Mod2+KP_4 workspace number $ws4 
-bindsym $mod+Mod2+KP_5 workspace number $ws5 
-bindsym $mod+Mod2+KP_6 workspace number $ws6 
-bindsym $mod+Mod2+KP_7 workspace number $ws7 
-bindsym $mod+Mod2+KP_8 workspace number $ws8 
-bindsym $mod+Mod2+KP_9 workspace number $ws9 
-bindsym $mod+Mod2+KP_0 workspace number $ws10 
+bindsym $mod+Mod2+KP_1 workspace number $ws1
+bindsym $mod+Mod2+KP_2 workspace number $ws2
+bindsym $mod+Mod2+KP_3 workspace number $ws3
+bindsym $mod+Mod2+KP_4 workspace number $ws4
+bindsym $mod+Mod2+KP_5 workspace number $ws5
+bindsym $mod+Mod2+KP_6 workspace number $ws6
+bindsym $mod+Mod2+KP_7 workspace number $ws7
+bindsym $mod+Mod2+KP_8 workspace number $ws8
+bindsym $mod+Mod2+KP_9 workspace number $ws9
+bindsym $mod+Mod2+KP_0 workspace number $ws10
+
+# shift containers to workspaces with num keypad
+# I can't use shift because the num keypad already has
+# a special value for shift (it toggles the numlock
+# temporarily).
+# So this is super+alt+keypad
+bindsym $mod+Mod1+Mod2+KP_1 move container to workspace number $ws1
+bindsym $mod+Mod1+Mod2+KP_2 move container to workspace number $ws2
+bindsym $mod+Mod1+Mod2+KP_3 move container to workspace number $ws3
+bindsym $mod+Mod1+Mod2+KP_4 move container to workspace number $ws4
+bindsym $mod+Mod1+Mod2+KP_5 move container to workspace number $ws5
+bindsym $mod+Mod1+Mod2+KP_6 move container to workspace number $ws6
+bindsym $mod+Mod1+Mod2+KP_7 move container to workspace number $ws7
+bindsym $mod+Mod1+Mod2+KP_8 move container to workspace number $ws8
+bindsym $mod+Mod1+Mod2+KP_9 move container to workspace number $ws9
+bindsym $mod+Mod1+Mod2+KP_0 move container to workspace number $ws10
+
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
