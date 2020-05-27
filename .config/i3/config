@@ -220,7 +220,7 @@ bar {
 # Modes
 # Press $mod+o followed by either f, t, Escape or Return to launch firefox,
 # thunderbird or return to the default mode, respectively.
-set $mode_launcher Launch: [c]hromium [f]irefox [e]mail [p]ycharm
+set $mode_launcher Launch: [c]hromium [f]irefox [e]mail [p]ycharm [s]potify
 bindsym $mod+o mode "$mode_launcher"
 
 mode "$mode_launcher"{
@@ -228,6 +228,7 @@ mode "$mode_launcher"{
     bindsym f exec --no-startup-id firefox
     bindsym e exec thunderbird
     bindsym p exec --no-startup-id pycharm
+    bindsym s exec --no-startup-id spotify
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
