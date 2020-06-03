@@ -24,7 +24,7 @@ PROMPT="%(?..[%?] )%n@%m:%~%(!.#.$) "
 EDITOR=/usr/bin/vim
 
 # LS colors and prompt
-alias ls='ls --color=auto -N' # Use the -N to remove annoying '' around filenames with spaces
+alias ls='ls -l --color=auto -N' # Use the -N to remove annoying '' around filenames with spaces
 alias ll='ls -l'
 alias la='ls -la'
 
@@ -58,3 +58,5 @@ bindkey -s "\C-r" "hstr -- \C-j"     # bind hstr to Ctrl-r (for Vi mode check do
 
 # Easily open .zshrc
 alias zconf="$EDITOR $HOME/.zshrc && source $HOME/.zshrc"
+export TERMINAL=/usr/bin/gnome-terminal
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
