@@ -1,0 +1,6 @@
+/usr/bin/nvidia-settings --load-config-only
+feh --bg-scale --randomize --no-fehbg $HOME/Pictures/Wallpapers &
+export TERMINAL=/usr/bin/gnome-terminal
+setxkbmap us,es -option grp:lctrl_lwin_toggle
+compton -b
+

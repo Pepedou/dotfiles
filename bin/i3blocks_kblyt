@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ $(xset -q | awk '/LED/ {print $10}') == "00000002" ]; then
+	echo en
+else
+	echo es
+fi
