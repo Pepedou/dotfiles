@@ -47,9 +47,6 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+w kill
 
-# Hide current window
-bindsym $mod+Mod1+h move scratchpad
-
 # start dmenu (a program launcher)
 bindsym $mod+space exec dmenu_run -b
 
@@ -103,7 +100,7 @@ bindsym $mod+Shift+l move right
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+Mod1+l layout toggle
+bindsym Mod1+Shift+l layout toggle
 bindsym $mod+t split toggle
 
 # toggle tiling / floating
@@ -188,8 +185,6 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -217,7 +212,7 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-bindsym $mod+Shift+q exec --no-startup-id "lock"
+bindsym $mod+Mod1+l exec --no-startup-id "lock"
 
 # Start i3blocks to display a workspace bar (plus the system information i3blocks
 # finds out, if available)
