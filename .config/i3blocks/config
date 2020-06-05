@@ -4,7 +4,6 @@ command=./i3blocks-contrib/load_average/load_average
 interval=10
 
 [mediaplayer]
-label=hola
 command=./i3blocks-contrib/mediaplayer/mediaplayer
 instance=spotify
 interval=5
@@ -16,19 +15,6 @@ LABEL=enp5s0
 IFACE=enp5s0
 interval=10
 
-[vpn]
-command=i3blocks_vpn
-interval=5
-label=VPN: 
-
-[unison]
-command=unison_monitor
-interval=5
-
-[midway]
-command=i3block_mwcheck
-interval=1
-
 [lang]
 command=i3blocks_kblyt
 interval=1
@@ -39,8 +25,6 @@ LABEL=♪
 interval=once
 signal=10
 STEP=5%
-#MIXER=[determined automatically]
-#SCONTROL=[determined automatically]
 
 [clock]
 command=date +'%a, %D %s %r'

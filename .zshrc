@@ -6,8 +6,10 @@ setopt autocd extendedglob notify
 setopt appendhistory sharehistory incappendhistory  # Enable shared and persistent history
 bindkey -v                                          # Enable vim mode
 
-# z fuzzy cd https://github.com/agkozak/zsh-z
-source $HOME/.zsh-z.plugin.zsh
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
+
+export FZF_DEFAULT_OPTS="--reverse --inline-info"
 
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/pepedou/.zshrc'
@@ -50,13 +52,10 @@ gpg-connect-agent updatestartuptty /bye >/dev/null
 # Shutdown alias
 alias shu='shutdown now'
 
-# HSTR configuration - add this to ~/.zshrc
-alias hh=hstr                    # hh to be alias for hstr
-setopt histignorespace           # skip cmds w/ leading space from history
-export HSTR_CONFIG=hicolor       # get more colors
-bindkey -s "\C-r" "hstr -- \C-j"     # bind hstr to Ctrl-r (for Vi mode check doc)
-
 # Easily open .zshrc
 alias zconf="$EDITOR $HOME/.zshrc && source $HOME/.zshrc"
 export TERMINAL=/usr/bin/gnome-terminal
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Fuzzy search pacman packages
+alias pacs="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"

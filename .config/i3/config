@@ -281,7 +281,7 @@ exec --no-startup-id signal-desktop
 # Ranger
 for_window [class="ranger"] move scratchpad
 bindsym $mod+Shift+e [class="ranger"] scratchpad show
-exec --no-startup-id gnome-terminal --geometry=200x50 --class ranger -- zsh -c ranger
+exec --no-startup-id i3-sensible-terminal -class ranger -e ranger
 
 # Vim
 bindsym $mod+v exec --no-startup-id gnome-terminal -- zsh -c 'vim -c VimwikiIndex'
@@ -289,7 +289,7 @@ bindsym $mod+v exec --no-startup-id gnome-terminal -- zsh -c 'vim -c VimwikiInde
 # Calc
 for_window [class="calc"] move scratchpad
 bindsym $mod+c [class="calc"] scratchpad show
-exec --no-startup-id gnome-terminal --class calc -- zsh -c bc
+exec --no-startup-id i3-sensible-terminal -class calc -e bc
 
 # Vim Diary
 bindsym $mod+Shift+d exec --no-startup-id gnome-terminal -- zsh -c 'vim -c VimwikiMakeDiaryNote'

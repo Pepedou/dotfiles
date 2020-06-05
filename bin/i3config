@@ -1,2 +1,2 @@
 #!/bin/sh
-gnome-terminal -- zsh -c 'vim ~/.config/i3/config && i3-msg reload'
+i3-sensible-terminal -e 'vim ~/.config/i3/config && i3-msg reload'
